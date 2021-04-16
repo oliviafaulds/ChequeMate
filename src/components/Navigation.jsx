@@ -34,8 +34,7 @@ export default function Navigation() {
           <Typography variant="h6" className={classes.title}>
             Jo's Test Project
           </Typography>
-          <MaterialLink component={RouterLink} to='/about'/>
-          <Button color="inherit" component={RouterLink} to='/about' >About</Button>
+          <Button color="inherit" >About</Button>
         </Toolbar>
       </AppBar>
     </div>
