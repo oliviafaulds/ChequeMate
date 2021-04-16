@@ -6,10 +6,10 @@ export default function About() {
     return (
         
         <Typography variant="h1" component="h2" gutterBottom>
-        About Page
-      </Typography>   
+            Messages Page
+        </Typography>   
 
     );
   }
   
-  export { default as About } from "./About";
+  export { default as Messages } from "./Messages";
