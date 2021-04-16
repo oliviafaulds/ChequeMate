@@ -1,5 +1,4 @@
-export {default as Navigation} from './Navigation';
-export {default as Home} from './Home';
+export {default as Dashboard} from './Dashboard';
 export {default as Spending} from './Spending';
 export {default as Transactions} from './Transactions';
 export {default as Calendar} from './Calendar';
