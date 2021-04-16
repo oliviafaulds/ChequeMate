@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link as RouterLink} from 'react-router-dom';
-import {Link as MaterialLink} from '@material-ui/core/Link';
+import Link from '@material-ui/core/Link';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navigation() {
   const classes = useStyles();
+  const preventDefault = (event) => event.preventDefault();
 
   return (
     <div className={classes.root}>
@@ -31,10 +32,18 @@ export default function Navigation() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography onClick={event =>  window.location.href='/'} variant="h6" className={classes.title}>
             Jo's Test Project
           </Typography>
-          <Button color="inherit" >About</Button>
+          <Button onClick={event =>  window.location.href='/'} color="inherit" >
+            Home
+          </Button>
+          <Button onClick={event =>  window.location.href='/about'} color="inherit" >
+                About
+          </Button>
+          <Button onClick={event =>  window.location.href='/contact'} color="inherit" >
+            Contact
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
