@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+To ensure you are in the correct directory, enter in terminal:
+
+### `cd ChequeMate`
+
 In the project directory, you can run:
 
 ### `npm start`
