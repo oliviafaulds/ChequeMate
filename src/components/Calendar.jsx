@@ -5,7 +5,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 //import interactionPlugin from '@fullcalendar/interaction'
 
-/*export default function About() {
+export  function About() {
     return (
         
         <Typography variant="h1" component="h2" gutterBottom>
@@ -15,10 +15,10 @@ import dayGridPlugin from '@fullcalendar/daygrid'
     );
   }
   export { default as Calendar } from "./Calendar";
-  */
+  
 
 
-export  default class DemoApp extends React.Component {
+export  default class calendar extends React.Component {
     state = {
         weekendsVisible: true
     }
