@@ -281,15 +281,15 @@ function App() {
             <div className={classes.toolbar} />
             <Container maxWidth="xl">
               <Switch>
-                  <Route path="/" exact component={() => <Dashboard />} />
-                  <Route path="/spending" exact component={() => <Spending />} />
-                  <Route path="/transactions" exact component={() => <Transactions />} />
-                  <Route path="/calendar" exact component={() => <Calendar />} />
-                  <Route path="/households" exact component={() => <Households />} />
-                  <Route path="/messages" exact component={() => <Messages />} />
-                  <Route path="/settings" exact component={() => <Settings />} />
-                  <Route path="/profilepage" exact component={() => <ProfilePage />} />
-                </Switch>
+                <Route path="/" exact component={() => <Dashboard />} />
+                <Route path="/spending" exact component={() => <Spending />} />
+                <Route path="/transactions" exact component={() => <Transactions />} />
+                <Route path="/calendar" exact component={() => <Calendar />} />
+                <Route path="/households" exact component={() => <Households />} />
+                <Route path="/messages" exact component={() => <Messages />} />
+                <Route path="/settings" exact component={() => <Settings />} />
+                <Route path="/profilepage" exact component={() => <ProfilePage />} />
+              </Switch>
             </Container>
           </main>
 
