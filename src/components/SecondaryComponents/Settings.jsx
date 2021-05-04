@@ -53,7 +53,7 @@ export default function Settings() {
         </Grid>
         <Grid item xs={3}>
           <Typography align="center" variant="h5" component="h2" gutterBottom>
-            *Balance*
+            £57.79
           </Typography> 
         </Grid>
         <Grid item xs={6}>
@@ -68,9 +68,9 @@ export default function Settings() {
             <Table className={classes.table} size="small" aria-label="a dense table">
               <TableHead>
                 <TableRow>
-                    <TableCell>Budget</TableCell>
-                    <TableCell align="right">Start Date</TableCell>
-                    <TableCell align="right">End Date</TableCell>
+                    <TableCell>Budget: £250</TableCell>
+                    <TableCell align="right">Start Date: 02/03/21</TableCell>
+                    <TableCell align="right">End Date: 02/04/21</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
