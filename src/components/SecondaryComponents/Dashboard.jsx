@@ -24,31 +24,13 @@ export default function Dashboard() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <Typography
             align="left"
             variant="h1"
             component="h2"
             gutterbottom>
-            Welcome back,
-          </Typography>
-        </Grid>
-        <Grid item xs={5}>
-          <Typography
-            align="centre"
-            variant="h1"
-            component="h2"
-            gutterbottom>
-            *name*
-          </Typography>
-        </Grid>
-        <Grid item xs={1}>
-          <Typography
-            align="centre"
-            variant="h1"
-            component="h2"
-            gutterbottom>
-            !
+            Welcome back, *user*!
           </Typography>
         </Grid>
       </Grid>  
