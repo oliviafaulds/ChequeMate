@@ -17,6 +17,7 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
+    // Constant method to allow users to sign in with email and password
     const signInWithEmailAndPasswordHandler = (event,email, password) => {
         event.preventDefault();
         auth.signInWithEmailAndPassword(email, password).catch(error => {
@@ -25,6 +26,7 @@ const SignIn = () => {
         });
       };
       
+      // Constant method for the event that the sign in button is clicked
       const onChangeHandler = (event) => {
           const {name, value} = event.currentTarget;
         
