@@ -1,18 +1,13 @@
 import React from 'react';
-import { auth, firestore } from "../../firebase";
+import { useContext } from 'react';
 import { Link, withRouter } from "react-router-dom";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-//import { UserContext } from "../providers/UserProvider";
 import Grid from '@material-ui/core/Grid';
 import Badge from '@material-ui/core/Badge';
 import MailIcon from '@material-ui/icons/Mail';
 import { PieChart } from 'react-minimal-pie-chart';
-
-/*const user = useContext(UserContext);
-const {photoURL, displayName, email} = user;
-console.log(user);
-const userEmail = email;*/
+import { UserContext } from "../../providers/UserProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,19 +19,14 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-
-const greetingName = firestore.collection('users')
-  .doc()
-  //.where('email', '==', email)
-  .get('displayName')
-  .then(doc => {
-    const data = doc.data();
-    console.log(data); 
-  });
   
 export default function Dashboard() {
   
   const classes = useStyles();
+
+  const user = useContext(UserContext);
+  const {photoURL, displayName, email} = user;
+  console.log(user);
 
   return (
     <div className={classes.root}>
@@ -47,7 +37,7 @@ export default function Dashboard() {
             variant="h1"
             component="h2"
             gutterbottom>
-            Welcome back, !
+            Welcome back, {displayName}!
           </Typography>
         </Grid>
         <Grid item xs={6}>
