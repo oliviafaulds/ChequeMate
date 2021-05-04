@@ -10,11 +10,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   
 
-To ensure you are in the correct directory, enter in terminal (with the correct file directory):
+Please install the following npm packages:
 
   
 
-### `cd ChequeMate`
+### `npm install`
+### `npm install --save react-router-dom`
+### `npm install --save firebase`
+### `npm install --save @fullcalendar/react`
+### `npm install --save @fullcalendar/daygrid`
+### `npm i fullcalendar`
+### `npm i @reach/router`
+### `npm install react-minimal-pie-chart`
 
   
 

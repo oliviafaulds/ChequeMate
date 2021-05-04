@@ -120,188 +120,156 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Function for the navigation bar to work and redirect main section to all other pages
 function Navigation() {
 
-    const user = useContext(UserContext);
-    const {photoURL, displayName, email} = user;
-    console.log(user);
-
-    // Declaring constants for theme and styling
-    const classes = useStyles();
-    const theme = useTheme();
+  // Constants
+  const user = useContext(UserContext);
+  const {displayName} = user;
+  console.log(user);
+  const classes = useStyles();
+  const theme = useTheme();
     
-    // Declaring constants for opening and closing the drawer
-    const [open, setOpen] = React.useState(false);
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+  // Declaring constants for opening and closing the drawer
+  const [open, setOpen] = React.useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
  
-    return (
-        <div className="App">
-    
-        <Router>
-    
-            <div className={classes.root}>
-    
-            <AppBar
-                position="fixed"
-                className={clsx(classes.appBar, {
-                [classes.appBarShift]: open,
+  return (
+    <div className="App">
+      <Router>
+        <div className={classes.root}>
+          <AppBar
+            position="fixed"
+            className={clsx(classes.appBar, {
+              [classes.appBarShift]: open,
+            })}>
+            <Toolbar>    
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, {
+                  [classes.hide]: open,
                 })}>
-    
-                <Toolbar>
-    
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={handleDrawerOpen}
-                    edge="start"
-                    className={clsx(classes.menuButton, {
-                    [classes.hide]: open,
-                    })}>
-                    <MenuIcon />
-                </IconButton>
-    
-                <Typography variant="h6" className={classes.title}>
-                    ChequeMate
-                </Typography>
-    
-                <Button color="inherit" startIcon={<AddIcon />} component={Link} to={'/newtransaction'} >
-                    New Transaction
-                </Button>
-    
-                </Toolbar>
-    
-            </AppBar>
-    
-            <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                ChequeMate
+              </Typography>
+              <Button color="inherit" startIcon={<AddIcon />} component={Link} to={'/newtransaction'} >
+                New Transaction
+              </Button>
+            </Toolbar>  
+          </AppBar>
+          <Drawer
+            variant="permanent"
+            className={clsx(classes.drawer, {
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+              })}
+            classes={{
+              paper: clsx({
                 [classes.drawerOpen]: open,
                 [classes.drawerClose]: !open,
-                })}
-                classes={{
-                paper: clsx({
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
-                }),
-                }}
-            >
-                
-                <div className={classes.toolbar}>
-                <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                </IconButton>
-                </div>
-    
-                <Divider />
-    
-                <List>
-    
-                <ListItem button component={Link} to={'/profilepage'}>
-                    <ListItemIcon>
-                    <AccountCircleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={displayName} />
-                </ListItem>
-    
-                </List>
-    
-                <Divider />
-    
-                <List>
-    
-                <ListItem button component={Link} to={'/'}>
-                    <ListItemIcon>
-                    <DashboardIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Dashboard' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/spending'}>
-                    <ListItemIcon>
-                    <AccountBalanceWalletIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Spending' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/transactions'}>
-                    <ListItemIcon>
-                    <SwapHorizIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Transactions' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/calendar'}>
-                    <ListItemIcon>
-                    <CalendarTodayIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Calendar' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/households'}>
-                    <ListItemIcon>
-                    <HomeIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Households' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/messages'}>
-                    <ListItemIcon>
-                    <MailIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Messages' />
-                </ListItem>
-    
-                <ListItem button component={Link} to={'/settings'}>
-                    <ListItemIcon>
-                    <SettingsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Settings' />
-                </ListItem>
-    
-                </List>
-    
-                <Divider />
-    
-                <List>
-                <ListItem button onClick = {() => {auth.signOut()}} >
-                    <ListItemIcon>
-                    <ExitToAppIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Logout' />
-                </ListItem>
-                </List>
-    
-            </Drawer>
-    
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <Container maxWidth="xl">
-                <Switch>
-                    <Route path="/" exact component={() => <Dashboard />} />
-                    <Route path="/spending" exact component={() => <Spending />} />
-                    <Route path="/transactions" exact component={() => <Transactions />} />
-                    <Route path="/calendar" exact component={() => <Calendar />} />
-                    <Route path="/households" exact component={() => <Households />} />
-                    <Route path="/messages" exact component={() => <Messages />} />
-                    <Route path="/settings" exact component={() => <Settings />} />
-                    <Route path="/profilepage" exact component={() => <ProfilePage />} />
-                    <Route path="/newtransaction" exact component={() => <NewTransaction />} />
-                </Switch>
-                </Container>
-            </main>
-    
-            </div>
-    
-        </Router>
-    
-        </div>
-    );
-
+              }),
+            }}
+          >          
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <List>   
+            <ListItem button component={Link} to={'/profilepage'}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary={displayName} />
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem button component={Link} to={'/'}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary='Dashboard' />
+            </ListItem>
+            <ListItem button component={Link} to={'/spending'}>
+              <ListItemIcon>
+                <AccountBalanceWalletIcon />
+              </ListItemIcon>
+              <ListItemText primary='Spending' />
+            </ListItem>
+              <ListItem button component={Link} to={'/transactions'}>
+                <ListItemIcon>
+                  <SwapHorizIcon />
+                </ListItemIcon>
+                <ListItemText primary='Transactions' />
+              </ListItem>
+              <ListItem button component={Link} to={'/calendar'}>
+                <ListItemIcon>
+                  <CalendarTodayIcon />
+                </ListItemIcon>
+                <ListItemText primary='Calendar' />
+              </ListItem>
+              <ListItem button component={Link} to={'/households'}>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary='Households' />
+              </ListItem>  
+              <ListItem button component={Link} to={'/messages'}>
+                <ListItemIcon>
+                  <MailIcon />
+                </ListItemIcon>
+                <ListItemText primary='Messages' />
+              </ListItem>
+              <ListItem button component={Link} to={'/settings'}>
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary='Settings' />
+              </ListItem>
+            </List>
+            <Divider />
+            <List>
+              <ListItem button onClick = {() => {auth.signOut()}} >
+                <ListItemIcon>
+                  <ExitToAppIcon />
+                </ListItemIcon>
+                <ListItemText primary='Logout' />
+              </ListItem>
+            </List>    
+          </Drawer>
+          <main className={classes.content}>
+            <div className={classes.toolbar} />
+            <Container maxWidth="xl">
+            <Switch>
+              <Route path="/" exact component={() => <Dashboard />} />
+              <Route path="/spending" exact component={() => <Spending />} />
+              <Route path="/transactions" exact component={() => <Transactions />} />
+              <Route path="/calendar" exact component={() => <Calendar />} />
+              <Route path="/households" exact component={() => <Households />} />
+              <Route path="/messages" exact component={() => <Messages />} />
+              <Route path="/settings" exact component={() => <Settings />} />
+              <Route path="/profilepage" exact component={() => <ProfilePage />} />
+              <Route path="/newtransaction" exact component={() => <NewTransaction />} />
+            </Switch>
+            </Container>
+          </main>
+        </div>   
+      </Router>
+    </div>
+  );
 }
 
+// Export navigation function
 export default Navigation;

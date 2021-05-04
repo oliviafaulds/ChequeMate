@@ -1,32 +1,40 @@
+// Import react and use state
 import React, { useState } from "react";
-import { auth } from "../firebase";
+
+// Import link from reach router
 import { Link } from "@reach/router";
 
+// Import authorisation from project files
+import { auth } from "../firebase";
+
+//------------------------------------------------------
+
+// Set password reset to a constant
 const PasswordReset = () => {
+
+  // Constants
   const [email, setEmail] = useState("");
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
-
   const onChangeHandler = event => {
     const { name, value } = event.currentTarget;
-
     if (name === "userEmail") {
       setEmail(value);
     }
   };
-
   const sendResetEmail = event => {
     event.preventDefault();
     auth
       .sendPasswordResetEmail(email)
       .then(() => {
-          setEmailHasBeenSent(true);
+        setEmailHasBeenSent(true);
         setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
       })
       .catch(() => {
         setError("Error resetting password");
       });
   };
+
   return (
     <div className="mt-8">
       <h1 className="text-xl text-center font-bold mb-3">
@@ -65,7 +73,6 @@ const PasswordReset = () => {
             Send me a reset link
           </button>
         </form>
-
         <Link
           to="/"
           className="my-2 text-blue-700 hover:text-blue-800 text-center block"
@@ -77,4 +84,5 @@ const PasswordReset = () => {
   );
 };
 
+// Export password reset page
 export default PasswordReset;
