@@ -1,31 +1,36 @@
+// Import react and useContext
 import React from 'react';
 import { useContext } from 'react';
-import { Link, withRouter } from "react-router-dom";
+
+// Import material UI components and icon
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Badge from '@material-ui/core/Badge';
 import MailIcon from '@material-ui/icons/Mail';
+
+// Import pie chart
 import { PieChart } from 'react-minimal-pie-chart';
+
+// Import context regarding the user and their account
 import { UserContext } from "../../providers/UserProvider";
 
+//------------------------------------------------------
+
+// Constant function to assign styles to components
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
 }));
   
+// Create and export the dashboard page as a function
 export default function Dashboard() {
   
+  // Constants
   const classes = useStyles();
-
   const user = useContext(UserContext);
-  const {photoURL, displayName, email} = user;
+  const {displayName} = user;
   console.log(user);
 
   return (
@@ -89,6 +94,4 @@ export default function Dashboard() {
       </Grid>  
     </div>
   );
-  }
-  
-  export { default as Dashboard } from "./Dashboard";
+}

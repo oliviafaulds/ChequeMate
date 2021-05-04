@@ -1,27 +1,15 @@
-import { Link, withRouter } from "react-router-dom";
-import Typography from '@material-ui/core/Typography';
+// Import react and fullCalendar components
 import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-//import interactionPlugin from '@fullcalendar/interaction'
 
-export  function About() {
-    return (
-        
-        <Typography variant="h1" component="h2" gutterBottom>
-            Calendar Page
-        </Typography>   
+//------------------------------------------------------
 
-    );
+// Create and export the calendar page itself
+export default class calendar extends React.Component {
+  state = {
+    weekendsVisible: true
   }
-  export { default as Calendar } from "./Calendar";
-  
-
-
-export  default class calendar extends React.Component {
-    state = {
-        weekendsVisible: true
-    }
   render() {
     return (
       <FullCalendar
@@ -30,19 +18,20 @@ export  default class calendar extends React.Component {
             left: 'today',
             center: 'title',
             right: 'prev,next'
-          }}
+        }}
         eventContent={renderEventContent}
-        selectable={true}
-       
+        selectable={true} 
       />
     )
   }
 }
+
+// Function to show the name and time of an event
 function renderEventContent(eventInfo) {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i>
-      </>
-    )
-  }
+  return (
+    <>
+      <b>{eventInfo.timeText}</b>
+      <i>{eventInfo.event.title}</i>
+    </>
+  )
+}
