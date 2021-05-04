@@ -1,15 +1,29 @@
 import React from 'react';
+
 import { Link, withRouter } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
+import { render } from '@testing-library/react';
 
-export default function About() {
-    return (
+class Settings extends React.Component{
+    
+   
+    render(){
+        return(
+            <div>
+                <p>
+                  
+                  <br />
+                  
+                </p>
+                <Link to="/PasswordReset"><button>
+                  Reset Password
+                </button>
+                </Link>
+              </div>
+        )
+       
         
-        <Typography variant="h1" component="h2" gutterBottom>
-            Settings Page
-        </Typography>   
-
-    );
-  }
-  
-  export { default as Settings } from "./Settings";
+    }
+    }
+    export default Settings
