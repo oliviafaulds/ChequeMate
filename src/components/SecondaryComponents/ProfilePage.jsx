@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -90,6 +91,22 @@ export default function ProfilePage() {
             <Box display="flex" alignItems="center" justifyContent="center">
                 <Button variant="contained" color="primary">
                     Change Password
+                </Button>
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+          </Grid>
+          <Grid item xs={6}>
+            <Box display="flex" alignItems="center" justifyContent="center">
+                <Button variant="contained">
+                    Delete Account
+                </Button>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box display="flex" alignItems="center" justifyContent="center">
+                <Button variant="contained" color="secondary">
+                    Logout
                 </Button>
             </Box>
           </Grid>
