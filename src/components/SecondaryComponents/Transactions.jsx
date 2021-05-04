@@ -31,7 +31,7 @@ export default class Transactions extends React.Component {
         .then( snapshot => {
             const Transactions = []
             snapshot.forEach( doc => {
-                const data = doc.data()
+              const data = doc.data()
                 Transactions.push(data)
             })
             this.setState({ Transactions: Transactions})

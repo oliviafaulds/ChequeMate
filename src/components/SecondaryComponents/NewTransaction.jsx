@@ -1,7 +1,14 @@
+// Import react and the use state
 import React, {useState} from 'react';
+
+// Import firestore from the project files
 import { firestore } from "../../firebase";
+
+// Import react router linking
+import { Link } from "react-router-dom";
+
+// Import material UI components
 import { makeStyles } from '@material-ui/core/styles';
-import { Link, withRouter } from "react-router-dom";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -14,27 +21,30 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 
+//------------------------------------------------------
+
+// Constant function to assign styles to components
 const useStyles = makeStyles((theme) => ({
     formControl: {
-      margin: theme.spacing(1),
-      minWidth: 250,
+        margin: theme.spacing(1),
+        minWidth: 250,
     },
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-      },
-      textField: {
+    textField: {
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
         width: 200,
-      },
-  }));
+    },
+}));
 
-export default function About() {
+// Create and export new transaction page
+export default function NewTransaction() {
+
+    // Constants
     const [item, setItem] = useState("");
     const [cost, setCost] = useState();
-    
     const classes = useStyles();
+
+    // Constant to handle actions when submit button is pressed
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -53,9 +63,7 @@ export default function About() {
         setCost("");
     }
    
-
     return (
-
         <form className = "New Transaction" onSubmit ={handleSubmit}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
@@ -80,9 +88,9 @@ export default function About() {
                         labelId="whose-transaction"
                         id="whose-transaction"
                         >
-                        <MenuItem>Personal</MenuItem>
-                        <MenuItem>HouseholdA</MenuItem>
-                        <MenuItem>HouseholdB</MenuItem>
+                            <MenuItem>Personal</MenuItem>
+                            <MenuItem>HouseholdA</MenuItem>
+                            <MenuItem>HouseholdB</MenuItem>
                         </Select>
                         <FormControlLabel
                             control={
@@ -102,9 +110,9 @@ export default function About() {
                         labelId="category"
                         id="category"
                         >
-                        <MenuItem>CatagoryA</MenuItem>
-                        <MenuItem>CatagoryB</MenuItem>
-                        <MenuItem>New Catagory</MenuItem>
+                            <MenuItem>CatagoryA</MenuItem>
+                            <MenuItem>CatagoryB</MenuItem>
+                            <MenuItem>New Catagory</MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -129,12 +137,12 @@ export default function About() {
                         labelId="reoccurance"
                         id="reoccurance"
                         >
-                        <MenuItem>Once Only</MenuItem>
-                        <MenuItem>Daily</MenuItem>
-                        <MenuItem>Weekly</MenuItem>
-                        <MenuItem>Fortnitely</MenuItem>
-                        <MenuItem>Monthly</MenuItem>
-                        <MenuItem>Yearly</MenuItem>
+                            <MenuItem>Once Only</MenuItem>
+                            <MenuItem>Daily</MenuItem>
+                            <MenuItem>Weekly</MenuItem>
+                            <MenuItem>Fortnitely</MenuItem>
+                            <MenuItem>Monthly</MenuItem>
+                            <MenuItem>Yearly</MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -152,8 +160,5 @@ export default function About() {
                 </Grid>
             </Grid>
         </form>
-
     );
-  }
-  
-  export { default as NewTransaction } from "./NewTransaction";
+}
