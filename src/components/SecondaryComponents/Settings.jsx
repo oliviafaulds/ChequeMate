@@ -5,25 +5,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { render } from '@testing-library/react';
 
-class Settings extends React.Component{
-    
-   
-    render(){
-        return(
+class Settings extends React.Component {
+
+
+    render() {
+        return (
             <div>
-                <p>
-                  
-                  <br />
-                  
-                </p>
                 <Link to="/PasswordReset"><button>
-                  Reset Password
+                    Reset Password
                 </button>
                 </Link>
-              </div>
+            </div>
         )
-       
-        
+
+
     }
-    }
-    export default Settings
+}
+export default Settings
