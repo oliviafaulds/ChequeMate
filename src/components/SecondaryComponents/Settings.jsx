@@ -31,58 +31,54 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 650,
     },
 }));
-  
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
 
+// Function to create and export the settings page
 export default function Settings() {
 
-    const classes = useStyles();
+  // Constant for using styles
+  const classes = useStyles();
   
-    return (
-      <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography align="center" variant="h1" component="h2" gutterBottom>
-                Budget Settings
-            </Typography> 
-          </Grid>
-          <Grid item xs={3}>
-            <Typography align="right" variant="h5" component="h2" gutterBottom>
-                Current Balance:
-            </Typography> 
-          </Grid>
-          <Grid item xs={3}>
-            <Typography align="center" variant="h5" component="h2" gutterBottom>
-                *Balance*
-            </Typography> 
-          </Grid>
-          <Grid item xs={6}>
-            <Box display="flex" alignItems="center" justifyContent="center">
-                <Button variant="contained" color="primary">
-                    Change Balance
-                </Button>
-            </Box>
-          </Grid>
-          <Grid item xs={12}>
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Typography align="center" variant="h1" component="h2" gutterBottom>
+            Budget Settings
+          </Typography> 
+        </Grid>
+        <Grid item xs={3}>
+          <Typography align="right" variant="h5" component="h2" gutterBottom>
+            Current Balance:
+          </Typography> 
+        </Grid>
+        <Grid item xs={3}>
+          <Typography align="center" variant="h5" component="h2" gutterBottom>
+            *Balance*
+          </Typography> 
+        </Grid>
+        <Grid item xs={6}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Button variant="contained" color="primary">
+              Change Balance
+            </Button>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
           <TableContainer component={Paper}>
             <Table className={classes.table} size="small" aria-label="a dense table">
-                <TableHead>
+              <TableHead>
                 <TableRow>
                     <TableCell>Budget</TableCell>
                     <TableCell align="right">Start Date</TableCell>
                     <TableCell align="right">End Date</TableCell>
                 </TableRow>
-                </TableHead>
-                <TableBody>
-                </TableBody>
+              </TableHead>
+              <TableBody>
+              </TableBody>
             </Table>
-            </TableContainer>
-          </Grid>
+          </TableContainer>
         </Grid>
-      </div>
-    );
+      </Grid>
+    </div>
+  );
 }
-
-export { default as Settings } from "./Settings";
