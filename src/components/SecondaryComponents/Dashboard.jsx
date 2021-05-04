@@ -57,10 +57,11 @@ export default function Dashboard() {
         <Grid item xs={6}>
           <PieChart
             data={[
-              { title: 'One', value: 10, color: '#5A86D5' }, //all these values can be changed once we link to database
-              { title: 'Two', value: 15, color: '#283C5F' },
-              { title: 'Three', value: 20, color: '#141E2F' },
+              { title: 'One', value: 10, color: '#ABABFD' }, //all these values can be changed once we link to database
+              { title: 'Two', value: 15, color: '#3B5998' },
+              { title: 'Three', value: 20, color: '#1C2951' },
             ]}
+            radius={40}
           />;
         </Grid>
         <Grid item xs={0.75}>
