@@ -140,9 +140,12 @@ export default function About() {
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl className={classes.formControl}>
-                        <Box display="flex" alignItems="left" justifyContent="left">
-                            <Button variant="contained" type="submit">
+                        <Box display="flex" alignItems="left" justifyContent="left" m={2}>
+                            <Button variant="contained" type="submit" color="primary">
                                 Submit
+                            </Button>
+                            <Button variant="contained" component={Link} to={'/'}>
+                                Cancel
                             </Button>
                         </Box>
                     </FormControl>
