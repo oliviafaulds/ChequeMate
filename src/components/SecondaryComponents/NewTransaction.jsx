@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { firestore } from "../firebase";
+import { firestore } from "../../firebase";
 import { Link, withRouter } from "react-router-dom";
 import Typography from '@material-ui/core/Typography';
 
