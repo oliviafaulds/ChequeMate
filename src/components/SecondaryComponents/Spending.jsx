@@ -51,7 +51,7 @@ export default function Spending() {
                 *£X.00*
             </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
             <Typography
                 align="right"
                 variant="subtitle1"
@@ -66,8 +66,8 @@ export default function Spending() {
         <Grid item xs={6}>
             <Box 
                 display="flex" 
-                alignItems="right" 
-                justifyContent="center">
+                alignItems="left" 
+                justifyContent="left">
                 <Button component={Link} to={'/transactions'}
                     variant="contained" 
                     color="primary">
