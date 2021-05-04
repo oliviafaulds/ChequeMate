@@ -55,7 +55,7 @@ export default function Spending() {
                 variant="subtitle1"
                 component="h2"
                 gutterBottom>
-                Today's spending:
+                Today's spending total:
             </Typography>
         </Grid>
         <Grid item xs={3}>
