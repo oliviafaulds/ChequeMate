@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { UserContext } from "../../providers/UserProvider";
+import {auth} from "../../firebase";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,7 +45,6 @@ export default function ProfilePage() {
                         height: "200px",
                         width: "200px"
                     }}
-                    className="border border-blue-300"
                 ></div>
             </Box>
           </Grid>
@@ -110,7 +110,7 @@ export default function ProfilePage() {
           </Grid>
           <Grid item xs={6}>
             <Box display="flex" alignItems="center" justifyContent="center">
-                <Button variant="contained" color="secondary">
+                <Button variant="contained" color="secondary" onClick = {() => {auth.signOut()}}>
                     Logout
                 </Button>
             </Box>
