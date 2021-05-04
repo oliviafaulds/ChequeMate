@@ -89,8 +89,7 @@ export default function NewTransaction() {
                         id="whose-transaction"
                         >
                             <MenuItem>Personal</MenuItem>
-                            <MenuItem>HouseholdA</MenuItem>
-                            <MenuItem>HouseholdB</MenuItem>
+                            <MenuItem>Flat 30G</MenuItem>
                         </Select>
                         <FormControlLabel
                             control={
@@ -110,9 +109,16 @@ export default function NewTransaction() {
                         labelId="category"
                         id="category"
                         >
-                            <MenuItem>CatagoryA</MenuItem>
-                            <MenuItem>CatagoryB</MenuItem>
-                            <MenuItem>New Catagory</MenuItem>
+                            <MenuItem>Bills</MenuItem>
+                            <MenuItem>Entertainment</MenuItem>
+                            <MenuItem>Expenses</MenuItem>
+                            <MenuItem>Gifts</MenuItem>
+                            <MenuItem>General</MenuItem>
+                            <MenuItem>Groceries</MenuItem>
+                            <MenuItem>Holidays</MenuItem>
+                            <MenuItem>Transport</MenuItem>
+                            <MenuItem>Pets</MenuItem>
+                            <MenuItem>Rent</MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -140,7 +146,7 @@ export default function NewTransaction() {
                             <MenuItem>Once Only</MenuItem>
                             <MenuItem>Daily</MenuItem>
                             <MenuItem>Weekly</MenuItem>
-                            <MenuItem>Fortnitely</MenuItem>
+                            <MenuItem>Fortnightly</MenuItem>
                             <MenuItem>Monthly</MenuItem>
                             <MenuItem>Yearly</MenuItem>
                         </Select>
