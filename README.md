@@ -22,6 +22,7 @@ Please install the following npm packages:
 ### `npm i fullcalendar`
 ### `npm i @reach/router`
 ### `npm install react-minimal-pie-chart`
+### `npm install -g firebase-tools`
 
   
 
