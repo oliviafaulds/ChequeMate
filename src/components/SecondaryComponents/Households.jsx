@@ -67,11 +67,16 @@ export default function Households() {
                                 </Grid>
                                 <Grid item xs={12} sm container>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="subtitle1">
-                                            *Household Name*
+                                        <Typography gutterBottom variant="h6">
+                                            Flat 30G
                                         </Typography>
                                         <Typography variant="body2" gutterBottom>
-                                            *Users*
+                                            Emily, 
+                                            Hayley,
+                                            Jo,
+                                            Olivia,
+                                            Simran,
+                                            Slav
                                         </Typography>
                                         <Grid item xs={12}>
                                             <Box display="flex" alignItems="center" justifyContent="center">
