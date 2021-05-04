@@ -1,8 +1,16 @@
+// Import react and use state
 import React, {useState} from "react";
+
+//Import Reach Router
 import { Link } from "@reach/router";
+
+// Import signInWithGoogle function and authorisation from project files
 import { signInWithGoogle } from "../firebase";
 import { auth } from "../firebase";
 
+//------------------------------------------------------------------------------------------------
+
+// Declare constants
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
@@ -28,7 +36,7 @@ const SignIn = () => {
           }
       };
    
-
+// Create and export the page to allow sign in
   return (
     <div className="mt-8">
       <h1 className="text-3xl mb-2 text-center font-bold">Sign In</h1>
