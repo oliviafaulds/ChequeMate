@@ -1,13 +1,22 @@
+// Import React and Use State
 import React, { useState } from "react";
+
+// Import Reach Router
 import { Link } from "@reach/router";
+
+// Import authorisatiion, Sign in with Google function and Generate user document from project files
 import { auth, signInWithGoogle, generateUserDocument } from "../firebase";
 
+//-------------------------------------------------------------------------------------------------------------
+
+// Declare constants
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
 
+  // Create constant method to create new user 
   const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
     try{
@@ -23,6 +32,7 @@ const SignUp = () => {
     setDisplayName("");
   };
 
+  // Constant method for the event that the sign in button is clicked
   const onChangeHandler = event => {
     const { name, value } = event.currentTarget;
 
@@ -35,6 +45,7 @@ const SignUp = () => {
     }
   };
 
+// Create and Export the page to allow users to sign up
   return (
     <div className="mt-8">
       <h1 className="text-3xl mb-2 text-center font-bold">Sign Up</h1>
