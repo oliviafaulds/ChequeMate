@@ -205,13 +205,6 @@ function Navigation() {
                     <ListItemIcon>
                     <AccountCircleIcon />
                     </ListItemIcon>
-                    <ListItemText primary='Profile' />
-                </ListItem>
-    
-                <ListItem button>
-                    <ListItemIcon>
-                    <AccountCircleIcon />
-                    </ListItemIcon>
                     <ListItemText primary={displayName} />
                 </ListItem>
     
