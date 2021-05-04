@@ -59,7 +59,7 @@ export default function Spending() {
             variant="h4"
             component="h2"
             gutterBottom>
-              *£X.00*
+              £57.79
           </Typography>
         </Grid>
         <Grid item xs={3}>
@@ -73,7 +73,7 @@ export default function Spending() {
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>
-            *£X.00*
+            £14.03
           </Paper>
         </Grid>
         <Grid item xs={6}>
