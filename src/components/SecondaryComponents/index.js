@@ -1,3 +1,4 @@
+// Index in order to import all components from the same location easily within the router
 export {default as Dashboard} from './Dashboard';
 export {default as Spending} from './Spending';
 export {default as Transactions} from './Transactions';
