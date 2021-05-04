@@ -7,7 +7,7 @@ import { UserContext } from "../providers/UserProvider";
 import {auth} from "../firebase";
 
 // Import components
-import {Dashboard, Spending, Transactions, Calendar, Households, Messages, Settings, ProfilePage} from "./SecondaryComponents";
+import {Dashboard, Spending, Transactions, Calendar, Households, Messages, Settings, ProfilePage, NewTransaction} from "./SecondaryComponents";
 import '../App.css';
  
 // Importing router tools
@@ -169,7 +169,7 @@ function Navigation() {
                     ChequeMate
                 </Typography>
     
-                <Button color="inherit" startIcon={<AddIcon />} >
+                <Button color="inherit" startIcon={<AddIcon />} component={Link} to={'/newtransaction'} >
                     New Transaction
                 </Button>
     
@@ -297,6 +297,7 @@ function Navigation() {
                     <Route path="/messages" exact component={() => <Messages />} />
                     <Route path="/settings" exact component={() => <Settings />} />
                     <Route path="/profilepage" exact component={() => <ProfilePage />} />
+                    <Route path="/newtransaction" exact component={() => <NewTransaction />} />
                 </Switch>
                 </Container>
             </main>

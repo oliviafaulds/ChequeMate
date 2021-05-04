@@ -6,3 +6,4 @@ export {default as Households} from './Households';
 export {default as Messages} from './Messages';
 export {default as Settings} from './Settings';
 export {default as ProfilePage} from './ProfilePage';
+export {default as NewTransaction} from './NewTransaction'; 
