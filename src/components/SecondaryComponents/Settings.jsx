@@ -1,4 +1,7 @@
+// Import react
 import React from 'react';
+
+// Import material UI components
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -12,6 +15,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+//------------------------------------------------------
+
+// Constant function to assign styles to components
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,

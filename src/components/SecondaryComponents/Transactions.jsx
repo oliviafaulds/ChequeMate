@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
-import { useContext } from 'react';
+// Import react
+import React from 'react';
+
+// Import firestore information from project
 import { firestore } from "../../firebase";
-import ReactDOM from 'react-dom'
-import { Link, withRouter } from "react-router-dom";
+
+// Import react router
+import { Link } from "react-router-dom";
+
+// Import material UI components and icon
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import AddIcon from '@material-ui/icons/Add';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import AddIcon from '@material-ui/icons/Add';
 
+//------------------------------------------------------
 
+// Create and export the page to show transactions
 export default class Transactions extends React.Component {
 
     state = {
@@ -20,7 +26,6 @@ export default class Transactions extends React.Component {
     }
 
     componentDidMount(){
-
         firestore.collection('Transactions')
         .get()
         .then( snapshot => {
@@ -84,5 +89,3 @@ export default class Transactions extends React.Component {
         );
     }
 }
-  
-  export { default as Transactions } from "./Transactions";
