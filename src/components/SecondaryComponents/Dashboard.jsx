@@ -77,7 +77,7 @@ export default function Dashboard() {
           <Badge 
             align="right"
             color="secondary" 
-            badgeContent={0} //change this value to unread message variable number
+            badgeContent={2} //change this value to unread message variable number
             showZero>
             <MailIcon />
           </Badge>
